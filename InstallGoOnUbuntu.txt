@@ -20,6 +20,9 @@ PATH="bla:bla:bla:/usr/local/go/bin" < as you can see the last one is the path t
 pwd
 
 
-#Type that path in the GOPATH variable like bellow
+#Type that path in the GOPATH variable like bellow 
 
 GOPATH="/home/alinclimente/Documents/working_go"
+
+#Check the installation
+go version
