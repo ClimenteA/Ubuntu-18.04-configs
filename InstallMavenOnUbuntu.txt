@@ -1,5 +1,7 @@
 Install Maven on Ubuntu 
 
+https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+
 apt-cache search maven
 
 sudo apt-get install maven
