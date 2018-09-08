@@ -68,6 +68,36 @@ java -jar name.jar
 
 
 
+//Change the .m2 repo path to a custom one
+
+- see where you have maven installed (mvn --version < check path)
+- look in folder conf for file settings.xml 
+
+- look for this commented info
+
+ <!-- localRepository
+   | The path to the local repository maven will use to store artifacts.
+   |
+   | Default: ~/.m2/repository
+  <localRepository>/path/to/local/repo</localRepository>
+  -->
+
+- Add full path to where you want maven to store data 
+<localRepository>D:/maven_repo</localRepository>
+
+
+//Run bellow to install dependecies to local localRepository
+mvn install 
+
+
+//Build the project locally / offline
+mvn -o package
+
+
+
+
+
+
 
 
 
