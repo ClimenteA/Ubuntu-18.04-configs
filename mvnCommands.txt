@@ -11,11 +11,26 @@ mvn archetype:generate
 
 
 
+//Add a dependency in maven
+//Paste in dependencies tag the dependency info
+
+<dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+</dependencies>
+
+
+
 //Create a jar file for testing
 mvn package
 
 //Run the jar file
 java -cp target/projectName-1.0-SNAPSHOT.jar com.alin.app.App
+
 
 //Create a distributable jar file
 https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html#
@@ -46,36 +61,10 @@ https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html
 </plugins>
 </build>
 
-//Add a dependency in maven
-//Paste in dependencies tag the dependency info
-
-<dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-</dependencies>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Run the standalone jar
+java -jar name.jar
 
 
 
