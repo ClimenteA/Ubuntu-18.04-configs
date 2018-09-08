@@ -1,0 +1,102 @@
+mvn --version
+
+//Create a template project
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+mvn archetype:generate 
+-DgroupId=com.mycompany.app 
+-DartifactId=my-app 
+-DarchetypeArtifactId=maven-archetype-quickstart 
+-DinteractiveMode=false
+
+
+
+//Create a jar file for testing
+mvn package
+
+//Run the jar file
+java -cp target/projectName-1.0-SNAPSHOT.jar com.alin.app.App
+
+//Create a distributable jar file
+https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html#
+//Add bellow to pom.xml and change the <mainClass>com.alin.app.App</mainClass> with your > main (String[] args){} class
+
+<build>
+<plugins>
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.1.1</version>
+    <executions>
+        <execution>
+        <phase>package</phase>
+        <goals>
+            <goal>shade</goal>
+        </goals>
+        <configuration>
+            <transformers>
+            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <mainClass>com.alin.app.App</mainClass>
+            </transformer>
+            </transformers>
+        </configuration>
+        </execution>
+    </executions>
+    </plugin>
+</plugins>
+</build>
+
+//Add a dependency in maven
+//Paste in dependencies tag the dependency info
+
+<dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+</dependencies>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Dealing with warning
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+//env variable
+JAVA_TOOL_OPTIONS = -Dfile.encoding=UTF8
+
+//pom.xml
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+
+
+
+
