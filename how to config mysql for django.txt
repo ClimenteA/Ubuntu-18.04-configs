@@ -1,0 +1,34 @@
+Python 3.5.2
+
+MySQL 5.7 (only mysql server and mysql workbench)
+On installing my sql ensure that you remember the password!
+
+Add mysql/bin folder to Enviroment variables
+From the command prompt type : "mysql -u root -p" (next it will ask for a password)
+
+You must create a database to use in django
+mysql > CREATE DATABASE websitedb CHARACTER SET utf8 COLLATE utf8_bin; (thats to make sure that the db uses utf8)
+
+See where the database is created
+mysql > SHOW VARIABLES LIKE "%datadir%";
+If you didn't change the path when installing mysql the db is here (with the .opt extension(in a folder with the db name))
+C:\ProgramData\MySQL\MySQL Server 5.7\Data\
+
+Also you need a connector for python to communicate with Mysql DB
+For that : "pip install mysqlclient"
+
+Configuration in settings.py django for mysql looks like this:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'websitedb',
+        'USER': 'root',
+        'PASSWORD': 'pass',
+        'HOST': 'localhost', # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+}
+
+Change your models (in models.py).
+Run python manage.py makemigrations to create migrations for those changes
+Run python manage.py migrate to apply those changes to the database.
