@@ -4,7 +4,7 @@ Install Golang on Ubuntu
 #Go to golang.org and download the version for linux
 
 #Change to directory where you've installed and extract the archive with
-tar -C /usr/local -xzf go1.11.linux-amd64.tar.gz (< name of the tar file)
+sudo tar -C /usr/local -xzf go1.11.linux-amd64.tar.gz (< name of the tar file)
 
 #Add environments variables for bin and GOPATH
 sudo -H gedit /etc/environment
